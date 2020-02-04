@@ -9,24 +9,24 @@ let process = require('process');
 */
 
 // --- DELETE THE LINES STARTING HERE ---
-let removeThisToStart = true;
+// let removeThisToStart = true;
 
-if (removeThisToStart) {
-  console.log('Hey! Open up storeWithArrays.js to see how to get started.');
-  process.exit();
-}
-
+// if (removeThisToStart) {
+//   console.log('Hey! Open up storeWithArrays.js to see how to get started.');
+//   process.exit();
+// }\\\\\\
 // --- DELETE THE LINES ENDING HERE ---
 
 /**
  * Creates and returns a new user (as an array).
  */
-function newUser(firstName, lastName, budget) {
+function newUser(firstName, lastName, budget, email) {
   let user = [];
 
   user[0] = firstName;
   user[1] = lastName;
   user[2] = budget;
+  user[3] = email;
 
   return user;
 }
@@ -48,14 +48,17 @@ function newSofa(name, price) {
  * and `false` otherwise.
  */
 function userCanAffordSofa(user, sofa) {
-  // This is your job. :)
+   if(sofa[1]> user[2]){
+     return false;
+   }
+   return true;
 }
 
 let allUsers = [
-  newUser('Alyssa', 'Morris', 1800.00),
-  newUser('Mindy', 'Weaver', 200.00),
-  newUser('Louis', 'Washington', 850.00),
-  newUser('Kevin', 'Isaacs', 80.00),
+  newUser('Alyssa', 'Morris', 1800.00, 'jgfusgfuegf'),
+  newUser('Mindy', 'Weaver', 200.00, 'fheuferfhueifuierf'),
+  newUser('Louis', 'Washington', 850.00, 'eufuwfuwfuwfuwfuw'),
+  newUser('Kevin', 'Isaacs', 80.00, 'nfwufhweufhwufweuf'),
 ];
 
 let sofa = newSofa('Nice Sofa', 800.00);
