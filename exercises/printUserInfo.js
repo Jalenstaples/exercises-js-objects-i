@@ -7,11 +7,13 @@ let process = require('process');
 
 let user = {};
 
-user['firstName'] = '<Change This>';
-user['lastName'] = '<Change This>';
-user['currentLocation'] = '<Change This>';
+user['firstName'] = 'James';
+user['lastName'] = 'Ford';
+user['currentLocation'] = 'Ohio';
 user['favoriteSongs'] = ['One Song', 'Another Great Song', 'Last Great Song'];
 user['age'] = 108;
+user['favoriteFood'] = 'Pizza';
+user['favoriteMovies'] = ['Conjuring', 'Titanic', 'Avengers'];
 
 // To get started, set user['canBeDisplayed'] to true instead of false
 user['canBeDisplayed'] = true;
@@ -33,10 +35,19 @@ if (user['age'] >= 100) {
 }
 
 console.log('Looks like you have great taste in music. Your favorite songs:');
+printFavorites(user['favoriteSongs']);
 
-for (let i = 0; i < user['favoriteSongs'].length; i += 1) {
-  let songPosition = i + 1;
-  let songName = user['favoriteSongs'][i];
+console.log('You have great taste. Your favorite movies are: ')
 
-  console.log(`${songPosition}. ${songName}`);
+printFavorites(user['favoriteMovies']);
+
+function printFavorites(array){
+
+  for(let i = 0; i < array.length;i++){
+    let favoritePosition = i + 1;
+    let itemName = array[i];
+
+    console.log(`${favoritePosition}. ${itemName}`);
+
+  }
 }
